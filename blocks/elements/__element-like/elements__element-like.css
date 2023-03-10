@@ -1,0 +1,18 @@
+.elements__element-like {
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 0;
+    margin-top: 0;
+    background: url(../../../images/elements__element-like.svg) center no-repeat;
+    min-width: 22px;
+    min-height: 19px;
+    border: 0;
+}
+.elements__element-like:hover {
+    opacity: 0.6;
+}
+.elements__element-like:active {
+    background: url(../../../images/like_active.svg) center no-repeat;
+    opacity: 1;
+}

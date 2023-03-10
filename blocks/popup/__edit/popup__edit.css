@@ -1,0 +1,22 @@
+.popup__edit {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin: 0 0 54px 0;
+    padding: 0;
+    max-width: 330px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+    .popup__edit {
+        font-size: 18px;
+        line-height: 22px;
+        max-width: 238px;
+        margin-bottom: 75px;
+    }
+}

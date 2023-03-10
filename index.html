@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto Russia</title>
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body class="root">
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/header__logo.svg" alt="Логотип">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="./images/profile__avatar.jpg" alt="Аватар">
+                <div class="profile__profile-info">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button class="profile__edit-button"></button>
+                    <p class="profile__description">Исследователь океана</p>
+                </div>
+                <button class="profile__add-button"></button>
+            </section>
+            <section class="elements">
+                <div class="elements__element-card">
+                    <img class="elements__element-picture" src="./images/karachaevsk.jpg" alt="Карачаевск">
+                    <h2 class="elements__element-text">Карачаевск</h2>
+                    <button class="elements__element-like"></button>
+                </div>
+                <div class="elements__element-card">
+                    <img class="elements__element-picture" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+                    <h2 class="elements__element-text">Гора Эльбрус</h2>
+                    <button class="elements__element-like"></button>
+                </div>
+                <div class="elements__element-card">
+                    <img class="elements__element-picture" src="./images/dombai.jpg" alt="Домбай">
+                    <h2 class="elements__element-text">Домбай</h2>
+                    <button class="elements__element-like"></button>
+                </div>
+                <div class="elements__element-card">
+                    <img class="elements__element-picture" src="./images/elbrus.jpg" alt="Гора Эльбрус">
+                    <h2 class="elements__element-text">Гора Эльбрус</h2>
+                    <button class="elements__element-like"></button>
+                </div>
+                <div class="elements__element-card">
+                    <img class="elements__element-picture" src="./images/dombai.jpg" alt="Домбай">
+                    <h2 class="elements__element-text">Домбай</h2>
+                    <button class="elements__element-like"></button>
+                </div>
+                <div class="elements__element-card">
+                    <img class="elements__element-picture" src="./images/karachaevsk.jpg" alt="Карачаево-Ч.">
+                    <h2 class="elements__element-text">Карачаево-Черкессия</h2>
+                    <button class="elements__element-like"></button>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">© 2023 Mesto Russia</p>
+        </footer>
+        <section class="popup">
+            <div class="popup__container">
+                <h2 class="popup__edit">Редактировать профиль</h2>
+                <form class="popup__form" novalidate>
+                    <div class="popup__input-container">
+                        <input class="popup__input popup__input_type_name" type="text" placeholder="Имя" required>
+                    </div>
+                    <div class="popup__input-container">
+                        <input class="popup__input popup__input_type_job" type="text" placeholder="О себе" required>
+                    </div>
+                    <button type="submit" class="popup__save">Сохранить</button>
+                </form>
+                <button class="popup__close"></button>
+            </div>
+        </section>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
