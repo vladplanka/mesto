@@ -8,14 +8,14 @@
     margin: 0;
 }
 @media screen and (max-width: 1279px) {
-    .footer {
+    .footer__copyright {
         font-size: 14px;
         line-height: 17px;
         text-align: center;
     }
 }
 @media screen and (max-width: 767px) {
-    .footer {
+    .footer__copyright {
         text-align: start;
     }
 }
