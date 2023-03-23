@@ -24,48 +24,6 @@
                 <button type="button" class="profile__add-button"></button>
             </section>
             <section class="elements">
-                <div class="elements__element-card">
-                    <img class="elements__element-picture" src="./images/karachaevsk.jpg" alt="Карачаевск">
-                    <div class="elements__element-card-content">
-                        <h2 class="elements__element-text">Карачаевск</h2>
-                        <button type="button" class="elements__element-like"></button>
-                    </div>
-                </div>
-                <div class="elements__element-card">
-                    <img class="elements__element-picture" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                    <div class="elements__element-card-content">
-                        <h2 class="elements__element-text">Гора Эльбрус</h2>
-                        <button type="button" class="elements__element-like"></button>
-                    </div>
-                </div>
-                <div class="elements__element-card">
-                    <img class="elements__element-picture" src="./images/dombai.jpg" alt="Домбай">
-                    <div class="elements__element-card-content">
-                        <h2 class="elements__element-text">Домбай</h2>
-                        <button type="button" class="elements__element-like"></button>
-                    </div>
-                </div>
-                <div class="elements__element-card">
-                    <img class="elements__element-picture" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-                    <div class="elements__element-card-content">
-                        <h2 class="elements__element-text">Гора Эльбрус</h2>
-                        <button type="button" class="elements__element-like"></button>
-                    </div>
-                </div>
-                <div class="elements__element-card">
-                    <img class="elements__element-picture" src="./images/dombai.jpg" alt="Домбай">
-                    <div class="elements__element-card-content">
-                        <h2 class="elements__element-text">Домбай</h2>
-                        <button type="button" class="elements__element-like"></button>
-                    </div>
-                </div>
-                <div class="elements__element-card">
-                    <img class="elements__element-picture" src="./images/karachaevsk.jpg" alt="Карачаево-Ч.">
-                    <div class="elements__element-card-content">
-                        <h2 class="elements__element-text">Карачаево-Черкессия</h2>
-                        <button type="button" class="elements__element-like"></button>
-                    </div>
-                </div>
             </section>
         </main>
         <footer class="footer">
@@ -83,6 +41,28 @@
                 </button>
             </div>
         </div>
+        <div class="popup-add">
+            <div class="popup-add__container">
+                <h2 class="popup-add__edit">Новое место</h2>
+                <form name="profile" class="popup-add__form">
+                        <input class="popup-add__input popup-add__input_type_name" name="name" type="text" placeholder="Название" required>
+                        <input class="popup-add__input popup-add__input_type_link" name="link" type="text" placeholder="Ссылка на картинку" required>
+                    <button type="submit" class="popup-add__save">Создать</button>
+                </form>
+                <button type="button" class="popup-add__close">
+                </button>
+            </div>
+        </div>
+        <template class="elements-template">
+            <div class="elements__element-card">
+                <button type="button" class="elements__element-trash"></button>
+                <img class="elements__element-picture" src="" alt="Фотография">
+                <div class="elements__element-card-content">
+                    <h2 class="elements__element-text"></h2>
+                    <button type="button" class="elements__element-like"></button>
+                </div>
+            </div>
+        </template>
     </div>
     <script src="./scripts/index.js"></script>
 </body>
