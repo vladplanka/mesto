@@ -33,8 +33,10 @@
             <div class="popup__container">
                 <h2 class="popup__edit">Редактировать профиль</h2>
                 <form name="profile" class="popup__form" novalidate>
-                        <input class="popup__input popup__input_type_name" name="name" type="text" placeholder="Имя" required>
-                        <input class="popup__input popup__input_type_job" name="about" type="text" placeholder="О себе" required>
+                    <input class="popup__input popup__input_type_name" name="name" type="text" placeholder="Имя"
+                        required>
+                    <input class="popup__input popup__input_type_job" name="about" type="text" placeholder="О себе"
+                        required>
                     <button type="submit" class="popup__save">Сохранить</button>
                 </form>
                 <button type="button" class="popup__close">
@@ -44,19 +46,29 @@
         <div class="popup-add">
             <div class="popup-add__container">
                 <h2 class="popup-add__edit">Новое место</h2>
-                <form name="profile" class="popup-add__form">
-                        <input class="popup-add__input popup-add__input_type_name" name="name" type="text" placeholder="Название" required>
-                        <input class="popup-add__input popup-add__input_type_link" name="link" type="text" placeholder="Ссылка на картинку" required>
+                <form name="profile" class="popup-add__form" novalidate>
+                    <input class="popup-add__input popup-add__input_type_name" name="name" type="text"
+                        placeholder="Название" required>
+                    <input class="popup-add__input popup-add__input_type_link" name="link" type="text"
+                        placeholder="Ссылка на картинку" required>
                     <button type="submit" class="popup-add__save">Создать</button>
                 </form>
                 <button type="button" class="popup-add__close">
                 </button>
             </div>
         </div>
+        <div class="popup-photo">
+            <div class="popup-photo__container">
+                <img class="popup-photo__image" src="#" alt="#">
+                <h3 class="popup-photo__title"></h3>
+                <button type="button" class="popup-photo__close">
+                </button>
+            </div>
+        </div>
         <template class="elements-template">
             <div class="elements__element-card">
                 <button type="button" class="elements__element-trash"></button>
-                <img class="elements__element-picture" src="" alt="Фотография">
+                <img class="elements__element-picture" src="#" alt="#">
                 <div class="elements__element-card-content">
                     <h2 class="elements__element-text"></h2>
                     <button type="button" class="elements__element-like"></button>
