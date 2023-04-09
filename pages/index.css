@@ -33,3 +33,34 @@
 @import url(../blocks/popup/__photo-container/popup__photo-container.css);
 @import url(../blocks/popup/__photo/popup__photo.css);
 @import url(../blocks/popup/__photo-title/popup__photo-title.css);
+
+.popup__input-error {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    margin-bottom: 10px;
+    min-height: 12px;
+}
+
+.popup__input-error:last-of-type {
+  margin-bottom: 31px;
+}
+
+.popup__save_inactive {
+    background-color: #E5E5E5;
+    border: 1px solid #000000;
+    color: #000000;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.form__input-error_active {
+    opacity: 1;
+  }
+  
+.form__input_type_error {
+    border-bottom-color: red;
+  }

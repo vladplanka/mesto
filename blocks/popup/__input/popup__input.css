@@ -8,7 +8,7 @@
     border: 0;
     width: 358px;
     min-height: 27px;
-    margin: 0 0 44px 0;
+    margin: 0 0 5px 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -16,15 +16,9 @@
     box-sizing: border-box;
     padding: 0 0 13px;
 }
-.popup__input:first-child {
-    margin-bottom: 30px;
-}
+
 @media screen and (max-width: 767px) {
     .popup__input {
         width: 238px;
-        margin-bottom: 38px;
-    }
-    .popup__input:first-child {
-        margin-bottom: 28px;
     }
 }
