@@ -12,6 +12,7 @@ const cardsAddPopupOpen = document.querySelector('.profile__add-button');
 const cardsAddPopupForm = document.forms['card-form'];
 const cardsAddPopupFormInputName = cardsAddPopup.querySelector('.popup__input_type_namecard');
 const cardsAddPopupFormInputLink = cardsAddPopup.querySelector('.popup__input_type_link');
+const cardsAddPopupFormSubmit = cardsAddPopup.querySelector('.popup__save');
 const photoPopup = document.querySelector('.popup_type_photo');
 const photoPopupImage = photoPopup.querySelector('.popup__photo');
 const photoPopupTitle = photoPopup.querySelector('.popup__photo-title');
@@ -88,7 +89,6 @@ initialCards.forEach(function (name, link) {
 
 // Создание карточек вручную
 function renderCard(item) {
-  ;
   elements.prepend(item);
 }
 
@@ -101,7 +101,7 @@ function handleFormSubmitCards(evt) {
   renderCard(newCard);
   closePopup(cardsAddPopup);
   cardsAddPopupForm.reset();
-  enableValidation(settings);
+  toggleButtonState([cardsAddPopupFormInputName, cardsAddPopupFormInputLink], cardsAddPopupFormSubmit, settings);
 }
 
 const settings = {
