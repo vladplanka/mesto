@@ -4,20 +4,22 @@ export default class Card {
         this._link = data.link;
         this._templateSelector = templateSelector;
 
-        this._renderPhotoPopup = renderPhotoPopup; // метод приближения при нажатии на фото
+        /** метод приближения при нажатии на фото */
+        this._renderPhotoPopup = renderPhotoPopup;
     }
 
-    _getTemplate() { // забираем разметку из HTML и клонируем элемент
+    /** забирает разметку из HTML и клонирует элемент. Задача метода - вернуть карточки через return */
+    _getTemplate() {
         const cardElement = document
             .querySelector(this._templateSelector)
             .content
             .querySelector('.elements__element-card')
             .cloneNode(true);
 
-        return cardElement; // задача метода _getTemplate — вернуть разметку карточки через return
-        // возвращаем DOM-элемент карточки
-    }
+        return cardElement; // возвращаем DOM-элемент карточки
 
+    }
+    /** создание карточки */
     generateCard() {
         this._element = this._getTemplate();
 
@@ -27,7 +29,7 @@ export default class Card {
         this._cardTrash = this._element.querySelector('.elements__element-trash');
 
         this._cardPicture.src = this._link;
-        this._cardPicture.alt = 'Фотография ' + this._name;
+        this._cardPicture.alt = `Фотография ${this._name}`;
         this._cardTitle.textContent = this._name;
 
         this._setEventListeners();
@@ -37,6 +39,7 @@ export default class Card {
 
     _deleteCard() {
         this._element.remove();
+        this._element = null; // очистка ссылки на DOM-элемент
     }
 
     _likeCard() {

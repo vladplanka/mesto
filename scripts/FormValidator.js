@@ -33,24 +33,24 @@ export default class FormValidator {
     };
 
     _setEventListeners = () => {
-        this._toggleButtonState(); // проверка состояния кнопки при первой загрузке страницы
+        this.toggleButtonState(); // проверка состояния кнопки при первой загрузке страницы
         this._inputList.forEach((inputElement) => {
             inputElement.addEventListener('input', () => {
                 this._checkInputValidity(inputElement);
-                this._toggleButtonState(); // проверка состояния кнопки при каждом изменении символа в любом из полей
+                this.toggleButtonState(); // проверка состояния кнопки при каждом изменении символа в любом из полей
             });
         });
     };
 
-    // функция, которая обходит массив полей и отвечает на вопрос: «Есть ли здесь хотя бы одно поле, которое не прошло валидацию?»
+    /** функция, которая обходит массив полей и отвечает на вопрос: «Есть ли здесь хотя бы одно поле, которое не прошло валидацию?» */
     _hasInvalidInput = () => {
         return this._inputList.some((inputElement) => {
             return !inputElement.validity.valid;
         })
     };
 
-    // функция, которая отвечает за блокировку кнопки «Отправить»
-    _toggleButtonState = () => {
+    /** функция, которая отвечает за блокировку кнопки «Отправить» */
+    toggleButtonState = () => {
         if (this._hasInvalidInput()) {
             this._buttonElement.classList.add(this._inactiveButtonClass);
             this._buttonElement.setAttribute('disabled', true);
