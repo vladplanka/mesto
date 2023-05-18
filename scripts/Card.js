@@ -1,11 +1,12 @@
 export default class Card {
-    constructor(data, templateSelector, renderPhotoPopup) {
+// constructor({ name, link }, templateSelector, renderPhotoPopup) { можно так. И можно будет вообще убрать data везде
+    constructor(data, templateSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
         this._templateSelector = templateSelector;
 
         /** метод приближения при нажатии на фото */
-        this._renderPhotoPopup = renderPhotoPopup;
+        this._handleCardClick = handleCardClick;
     }
 
     /** забирает разметку из HTML и клонирует элемент. Задача метода - вернуть карточки через return */
@@ -48,11 +49,10 @@ export default class Card {
 
     _setEventListeners() {
         this._cardPicture.addEventListener('click', () => {
-            this._renderPhotoPopup(this._name, this._link);
+            this._handleCardClick(this._name, this._link);
         });
-        this._cardTrash.addEventListener('click', () => {
-            this._deleteCard();
-        });
+        this._cardTrash.addEventListener('click', this._deleteCard.bind(this));
+        // button.addEventListener('click', sendButton.click.bind(sendButton)); для понимания. sendButton (1) - из какого объекта берём функцию. sendButton (2) - объект который передаём
         this._cardLike.addEventListener('click', () => {
             this._likeCard();
         });
