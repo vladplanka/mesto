@@ -1,5 +1,5 @@
 export default class Card {
-// constructor({ name, link }, templateSelector, renderPhotoPopup) { можно так. И можно будет вообще убрать data везде
+    // constructor({ name, link }, templateSelector, renderPhotoPopup) { можно так. И можно будет вообще убрать data везде
     constructor(data, templateSelector, handleCardClick) {
         this._name = data.name;
         this._link = data.link;
