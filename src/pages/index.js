@@ -12,8 +12,6 @@ import {
   profilePopupFormInputJob,
   cardsAddPopupOpen,
   cardsAddPopupForm,
-  cardsAddPopupFormInputName,
-  cardsAddPopupFormInputLink,
   validationSettings,
   initialCards
 } from "../utils/constants.js";
@@ -27,6 +25,7 @@ const handleCardClick = (name, link) => {
 
 /** функция отправки формы в попапе редактирования профиля */
 function handleFormSubmitProfile(item) {
+  console.log(item)
   profileInfo.setUserInfo(item);
   popupProfile.close();
 };
@@ -61,6 +60,7 @@ popupAddCards.setEventListeners();
 
 /** функция отправки формы в попапе добавления карточки */
 function handleFormSubmitCards(data) {
+  console.log(data)
   cardsSection.addItem(createCard({
     name: data.name,
     link: data.link
