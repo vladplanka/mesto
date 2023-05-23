@@ -1,7 +1,6 @@
 import "./index.css";
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
-import { initialCards } from "../components/cards.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
@@ -15,7 +14,8 @@ import {
   cardsAddPopupForm,
   cardsAddPopupFormInputName,
   cardsAddPopupFormInputLink,
-  validationSettings
+  validationSettings,
+  initialCards
 } from "../utils/constants.js";
 
 const popupImage = new PopupWithImage('.popup_type_photo');
@@ -26,11 +26,8 @@ const handleCardClick = (name, link) => {
 }
 
 /** функция отправки формы в попапе редактирования профиля */
-function handleFormSubmitProfile() {
-  profileInfo.setUserInfo({
-    name: profilePopupFormInputName.value,
-    description: profilePopupFormInputJob.value
-  })
+function handleFormSubmitProfile(item) {
+  profileInfo.setUserInfo(item);
   popupProfile.close();
 };
 
@@ -40,8 +37,8 @@ const profileInfo = new UserInfo({
 });
 
 /** функция создания карточки */
-const createCard = ({ name, link }) => {
-  const cardNew = new Card({ name, link }, '.elements-template', handleCardClick);
+const createCard = (item) => {
+  const cardNew = new Card({ name: item.name, link: item.link }, '.elements-template', handleCardClick);
   const cardElement = cardNew.generateCard();
 
   return cardElement;
@@ -49,8 +46,8 @@ const createCard = ({ name, link }) => {
 
 const cardsSection = new Section({
   items: initialCards.reverse(),
-  renderer: (name, link) => {
-    cardsSection.addItem(createCard(name, link));
+  renderer: (item) => {
+    cardsSection.addItem(createCard(item));
   }
 }, '.elements');
 
@@ -63,14 +60,12 @@ const popupAddCards = new PopupWithForm('.popup_type_cards', handleFormSubmitCar
 popupAddCards.setEventListeners();
 
 /** функция отправки формы в попапе добавления карточки */
-function handleFormSubmitCards() {
-  const newCard = createCard({
-    name: cardsAddPopupFormInputName.value,
-    link: cardsAddPopupFormInputLink.value
-  });
-  cardsSection.addItem(newCard);
+function handleFormSubmitCards(data) {
+  cardsSection.addItem(createCard({
+    name: data.name,
+    link: data.link
+  }));
   popupAddCards.close();
-  validationAddPopup.toggleButtonState();
 }
 
 const validationProfilePopup = new FormValidator(validationSettings, profilePopupForm);
@@ -88,5 +83,6 @@ profilePopupOpen.addEventListener('click', () => {
 
 cardsAddPopupOpen.addEventListener('click', () => {
   popupAddCards.open();
+  validationAddPopup.toggleButtonState();
 });
 
